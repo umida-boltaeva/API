@@ -16,8 +16,11 @@ app.post("/", function(req, res){
 
     var data = JSON.parse(body);
     var price = data.last;
-        console.log(price)
+
+        res.send("<h1>The price of Bitcoin is " + price + "USD</h1>");
+
     });    
 });
+
 
 app.listen(3000);

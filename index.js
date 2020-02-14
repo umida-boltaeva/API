@@ -11,10 +11,13 @@ app.get("/", function(req, res){
 });
 
 app.post("/", function(req, res){
+
     request("https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD", function(error, response, body){
-        console.log(response);
-        
-    }    
-})
+
+    var data = JSON.parse(body);
+    var price = data.last;
+        console.log(price)
+    });    
+});
 
 app.listen(3000);
